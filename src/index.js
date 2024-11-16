@@ -66,24 +66,43 @@ function Header() {
   );
 }
 
+/* 
+    name: 'Pizza Prosciutto',
+    ingredients: 'Tomato, mozarella, ham, aragula, and burrata cheese',
+    price: 18,
+    photoName: 'pizzas/prosciutto.jpg',
+    soldOut: false,
+*/
+
 function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="Pizza Spinaci"
+        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+        price={12}
+        photoName="pizzas/spinaci.jpg"
+      />
+      <Pizza
+        name="Pizza Prosciutto"
+        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
+        price={18}
+        photoName="pizzas/prosciutto.jpg"
+      />
     </main>
   );
 }
 
-function Pizza() {
+function Pizza({ name, ingredients, price, photoName }) {
   return (
-    <div>
-      <img src="pizzas/prosciutto.jpg" alt="Pizza Prosciutto" />
-      <h3>Pizza Prosciutto</h3>
-      <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
+    <div className="pizza">
+      <img src={photoName} alt={name} />
+      <div>
+        <h3>{name}</h3>
+        <p>{ingredients}</p>
+        <span>{price}</span>
+      </div>
     </div>
   );
 }
@@ -93,13 +112,14 @@ function Footer() {
   const openHour = 12;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour < closeHour;
-  console.log(`🚀CHECK > isOpen:`, isOpen);
 
   // if (hour >= openHour && hour < closeHour) alert(`We're currently open`);
   // else alert(`Sorry we're closed`);
 
   return (
-    <footer className="footer">{new Date().toLocaleDateString()}. We're currently open</footer>
+    <footer className="footer">
+      {new Date().toLocaleDateString()}. We're currently open
+    </footer>
   );
 }
 
