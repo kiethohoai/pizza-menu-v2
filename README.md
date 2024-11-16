@@ -4,3 +4,4 @@ Working With Components, Props, and JSX
 003 Before We Start Coding Debugging
 004 Components as Building Blocks
 005 Creating And Reusing a Component
+006 What is JSX
