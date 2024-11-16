@@ -17,3 +17,5 @@ Working With Components, Props, and JSX
 016 Conditional Rendering With &&
 017 Conditional Rendering With Ternaries
 018 Conditional Rendering With Multiple Returns
+019 Extracting JSX Into a New Component
+020 Destructuring Props
