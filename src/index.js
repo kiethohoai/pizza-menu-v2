@@ -86,6 +86,8 @@ function Menu() {
 }
 
 function Pizza({ pizza }) {
+  if (pizza.soldOut) return null;
+
   return (
     <li className="pizza">
       <img src={pizza.photoName} alt={pizza.name} />
@@ -100,7 +102,7 @@ function Pizza({ pizza }) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 12;
+  const openHour = 0;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour < closeHour;
 
