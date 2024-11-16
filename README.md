@@ -5,3 +5,4 @@ Working With Components, Props, and JSX
 004 Components as Building Blocks
 005 Creating And Reusing a Component
 006 What is JSX
+007 Creating More Components
