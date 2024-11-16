@@ -5,7 +5,8 @@ function App() {
   return <h1>Hello React</h1>;
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
 root.render(
   <React.StrictMode>
     <App />
