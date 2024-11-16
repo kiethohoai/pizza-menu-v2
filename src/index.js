@@ -66,53 +66,38 @@ function Header() {
   );
 }
 
-/* 
-    name: 'Pizza Prosciutto',
-    ingredients: 'Tomato, mozarella, ham, aragula, and burrata cheese',
-    price: 18,
-    photoName: 'pizzas/prosciutto.jpg',
-    soldOut: false,
-*/
-
 function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
-      <Pizza
-        name="Pizza Spinaci"
-        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-        price={12}
-        photoName="pizzas/spinaci.jpg"
-      />
-      <Pizza
-        name="Pizza Prosciutto"
-        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
-        price={18}
-        photoName="pizzas/prosciutto.jpg"
-      />
+
+      <ul className="pizzas">
+        {pizzaData.map((pizza, i) => (
+          <Pizza pizza={pizza} key={`pizza-${i}`} />
+        ))}
+      </ul>
     </main>
   );
 }
 
-function Pizza({ name, ingredients, price, photoName }) {
+function Pizza({ pizza }) {
   return (
-    <div className="pizza">
-      <img src={photoName} alt={name} />
+    <li className="pizza">
+      <img src={pizza.photoName} alt={pizza.name} />
       <div>
-        <h3>{name}</h3>
-        <p>{ingredients}</p>
-        <span>{price}</span>
+        <h3>{pizza.name}</h3>
+        <p>{pizza.ingredients}</p>
+        <span>{pizza.price}</span>
       </div>
-    </div>
+    </li>
   );
 }
 
 function Footer() {
-  const hour = new Date().getHours();
-  const openHour = 12;
-  const closeHour = 22;
-  const isOpen = hour >= openHour && hour < closeHour;
-
+  // const hour = new Date().getHours();
+  // const openHour = 12;
+  // const closeHour = 22;
+  // const isOpen = hour >= openHour && hour < closeHour;
   // if (hour >= openHour && hour < closeHour) alert(`We're currently open`);
   // else alert(`Sorry we're closed`);
 
