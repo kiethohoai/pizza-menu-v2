@@ -7,3 +7,4 @@ Working With Components, Props, and JSX
 006 What is JSX
 007 Creating More Components
 008 JavaScript Logic in Components
+009 Separation of Concerns
